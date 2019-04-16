@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * This file is part of the Kdyby (http://www.kdyby.org)
@@ -56,7 +57,7 @@ class SessionStorage
 	public function establishCSRFTokenState()
 	{
 		if (!$this->state) {
-			$this->state = md5(uniqid(mt_rand(), true));
+			$this->state = md5(uniqid((string) mt_rand(), true));
 		}
 	}
 
