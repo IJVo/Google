@@ -40,7 +40,11 @@ class GoogleExtension extends CompilerExtension
 	public function loadConfiguration()
 	{
 		$builder = $this->getContainerBuilder();
-		$config = $this->getConfig($this->defaults);
+
+//		$config = $this->getConfig($this->defaults);
+		$config = $this->getConfig();
+		$expDef = \Nette\DI\Helpers::expand($this->defaults, $builder->parameters);
+		$config = \Nette\DI\Config\Helpers::merge($config, $expDef);
 
 		$rawConfig = $this->getConfig();
 		if (isset($rawConfig['appId']) || isset($rawConfig['appSecret'])) {

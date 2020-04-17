@@ -61,7 +61,8 @@ abstract class AbstractDialog extends Component
 		$this->config = $google->getConfig();
 		$this->session = $google->getSession();
 
-		parent::__construct();
+		// Remove for remove constructor in Nette\ComponentModel\Component
+		//parent::__construct();
 	}
 
 
@@ -117,6 +118,7 @@ abstract class AbstractDialog extends Component
 	 * It automatically calls the onResponse event.
 	 *
 	 * You don't have to redirect, the request before the auth process will be restored automatically.
+	 * @crossOrigin
 	 */
 	public function handleResponse()
 	{

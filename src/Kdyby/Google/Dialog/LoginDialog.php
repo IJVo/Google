@@ -32,7 +32,7 @@ class LoginDialog extends AbstractDialog
 
 
 	/**
-	 * @return UrlScript
+	 * @return string
 	 */
 	public function getUrl()
 	{
@@ -45,6 +45,7 @@ class LoginDialog extends AbstractDialog
 		$this->session->establishCSRFTokenState();
 		$client->setState($this->session->state);
 
-		return new UrlScript($this->google->client->createAuthUrl());
+		$authUrl = $this->google->client->createAuthUrl();
+		return $authUrl;
 	}
 }

@@ -15,5 +15,3 @@ vendor/.htaccess
 /coverage*.xml
 
 composer.lock
-CodStd.bat
-testuj.bat

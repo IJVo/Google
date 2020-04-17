@@ -1,5 +1,5 @@
 {
-	"name": "ijvo/google",
+	"name": "ijvo/google-4",
 	"type": "library",
 	"description": "Google API wrapper and authentication for Nette Framework",
 	"keywords": ["nette", "google", "authentication", "auth", "login"],
@@ -16,24 +16,24 @@
 			"email": "filip@prochazka.su"
 		},
 		{
+			"name": "Ing. Jaroslav Vaculik -IJVo",
+			"email": "ijvo.ijvo@gmail.com",
+			"homepage": "https://ijvo.cz"
+		},
+		{
 			"name": "Google",
 			"homepage": "https://github.com/google/google-api-php-client/graphs/contributors"
 		}
 	],
 	"require": {
-		"nette/nette": "~2.4 || ^3.0",
+		"nette/nette": "^3.0",
 		"tracy/tracy": "^2.4",
 		"ext-curl": "*",
 		"ext-json": "*",
 		"google/apiclient": "^2.0"
 	},
 	"require-dev": {
-		"nette/tester": "@dev",
-		"jakub-onderka/php-parallel-lint": "~1.0"
-	},
-	"support": {
-		"email": "filip@prochazka.su",
-		"issues": "https://github.com/kdyby/google/issues"
+		"nette/tester": "^2.0"
 	},
 	"autoload": {
 		"psr-0": {
