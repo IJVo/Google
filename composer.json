@@ -14,6 +14,11 @@
 			"name": "Filip Procházka",
 			"homepage": "http://filip-prochazka.com",
 			"email": "filip@prochazka.su"
+		}, 
+		{
+			"name": "Ing. Jaroslav Vaculik -IJVo",
+			"email": "ijvo.ijvo@gmail.com",
+			"homepage": "https://ijvo.cz"
 		},
 		{
 			"name": "Google",
@@ -28,12 +33,7 @@
 		"google/apiclient": "^2.0"
 	},
 	"require-dev": {
-		"nette/tester": "@dev",
-		"jakub-onderka/php-parallel-lint": "~1.0"
-	},
-	"support": {
-		"email": "filip@prochazka.su",
-		"issues": "https://github.com/kdyby/google/issues"
+		"nette/tester": "@dev"
 	},
 	"autoload": {
 		"psr-0": {
