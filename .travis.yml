@@ -12,12 +12,12 @@ before_script:
   - mkdir -p tests/_tmp
   - mkdir temp/
   - composer self-update
-  - composer create-project --no-interaction --no-progress --prefer-dist jakub-onderka/php-parallel-lint temp/php-parallel-lint ~0.9
+  - composer create-project --no-interaction --no-progress --prefer-dist php-parallel-lint/php-parallel-lint temp/php-parallel-lint ~1.2
   - composer create-project --no-interaction --no-progress --prefer-dist nette/code-checker temp/code-checker ~2.9
   - composer install --no-interaction --prefer-source
   - php temp/code-checker/src/code-checker.php --no-progress -d src
   - php temp/code-checker/src/code-checker.php --no-progress -d tests/KdybyTests
-  - php temp/php-parallel-lint/parallel-lint.php -e php,phpt -j 8 --exclude tests/_temp --exclude temp --exclude vendor 
+  - php temp/php-parallel-lint/parallel-lint.php -e php,phpt -j 8 --exclude tests/_temp --exclude temp --exclude vendor .
 
 script:
   - ./vendor/bin/tester -c ./tests/phpUnix.ini ./tests/KdybyTests/
