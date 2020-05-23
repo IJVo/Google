@@ -1,5 +1,5 @@
 {
-	"name": "ijvo/google-4",
+	"name": "ijvo/google",
 	"type": "library",
 	"description": "Google API wrapper and authentication for Nette Framework",
 	"keywords": ["nette", "google", "authentication", "auth", "login"],
