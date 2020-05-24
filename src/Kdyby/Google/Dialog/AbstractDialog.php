@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * This file is part of the Kdyby (http://www.kdyby.org)
@@ -26,29 +27,19 @@ use Nette\Http\UrlScript;
 abstract class AbstractDialog extends Component
 {
 
-	/**
-	 * @var array of function(AbstractDialog $dialog)
-	 */
+	/** @var array of function(AbstractDialog $dialog) */
 	public $onResponse = [];
 
-	/**
-	 * @var Google
-	 */
+	/** @var Google */
 	protected $google;
 
-	/**
-	 * @var Configuration
-	 */
+	/** @var Configuration */
 	protected $config;
 
-	/**
-	 * @var \Kdyby\Google\SessionStorage
-	 */
+	/** @var \Kdyby\Google\SessionStorage */
 	protected $session;
 
-	/**
-	 * @var Application\UI\Link|UrlScript
-	 */
+	/** @var Application\UI\Link|UrlScript */
 	protected $returnUri;
 
 

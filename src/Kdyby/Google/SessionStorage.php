@@ -31,9 +31,7 @@ class SessionStorage
 
 	use \Nette\SmartObject;
 
-	/**
-	 * @var \Nette\Http\SessionSection
-	 */
+	/** @var \Nette\Http\SessionSection */
 	protected $session;
 
 

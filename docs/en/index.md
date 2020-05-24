@@ -11,10 +11,10 @@ You can also communicate with Google's api through this addon.
 Installation
 -----------
 
-The best way to install Kdyby/Google is using  [Composer](http://getcomposer.org/):
+The best way to install IJVo/Google is using  [Composer](http://getcomposer.org/):
 
 ```sh
-$ composer require kdyby/google:~0.1
+$ composer require ijvo/google:~1.0
 ```
 
 With Nette 2.1 and newer, you can enable the extension using your neon config.

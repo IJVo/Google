@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * This file is part of the Kdyby (http://www.kdyby.org)
@@ -38,14 +39,10 @@ class Google
 
 	use \Nette\SmartObject;
 
-	/**
-	 * @var IRequest
-	 */
+	/** @var IRequest */
 	protected $httpRequest;
 
-	/**
-	 * @var Configuration
-	 */
+	/** @var Configuration */
 	protected $config;
 
 	/**
@@ -61,24 +58,18 @@ class Google
 	 */
 	protected $accessToken;
 
-	/**
-	 * @var \Nette\Application\Application
-	 */
+	/** @var \Nette\Application\Application */
 	private $app;
 
-	/**
-	 * @var SessionStorage
-	 */
+	/** @var SessionStorage */
 	private $session;
 
-	/**
-	 * @var Google_Client
-	 */
+	/** @var Google_Client */
 	private $client;
 
 
 	public function __construct(
-	Application\Application $app, Configuration $config, IRequest $httpRequest, SessionStorage $session, Google_Client $client)
+					Application\Application $app, Configuration $config, IRequest $httpRequest, SessionStorage $session, Google_Client $client)
 	{
 		$this->app = $app;
 		$this->config = $config;

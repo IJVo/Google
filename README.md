@@ -12,7 +12,7 @@ Integration of [google/google-api-php-client](https://github.com/google/google-a
 Requirements
 ------------
 
-Kdyby/Google requires PHP 5.6 or higher with cUrl extension enabled.
+IJVo/Google requires PHP 5.6 or higher with cUrl extension enabled.
 
 - [Nette Framework](https://github.com/nette/nette)
 - [Kdyby/CurlCaBundle](https://github.com/Kdyby/CurlCaBundle)
@@ -22,12 +22,13 @@ Kdyby/Google requires PHP 5.6 or higher with cUrl extension enabled.
 Installation
 ------------
 
-The best way to install Kdyby/Google is using  [Composer](http://getcomposer.org/):
+The best way to install IJVo/Google is using  [Composer](http://getcomposer.org/):
 
 ```sh
-$ composer require kdyby/google:~0.1
+$ composer require ijvo/google:~1.0
 ```
 
+For Nette `2.4` is `~0.1.6`
 For Nette `2.1` and newer is `~0.1`
 
 

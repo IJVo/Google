@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * This file is part of the Kdyby (http://www.kdyby.org)
@@ -10,7 +11,6 @@ declare(strict_types=1);
 
 namespace KdybyTests;
 
-use Kdyby;
 use Tester;
 use Tracy;
 
@@ -31,20 +31,19 @@ Tracy\Debugger::$logDirectory = TEMP_DIR;
 
 
 $_SERVER = array_intersect_key($_SERVER, array_flip([
-	'PHP_SELF', 'SCRIPT_NAME', 'SERVER_ADDR', 'SERVER_SOFTWARE', 'HTTP_HOST', 'DOCUMENT_ROOT', 'OS', 'argc', 'argv', ]));
+		'PHP_SELF', 'SCRIPT_NAME', 'SERVER_ADDR', 'SERVER_SOFTWARE', 'HTTP_HOST', 'DOCUMENT_ROOT', 'OS', 'argc', 'argv',
+				]));
 $_SERVER['REQUEST_TIME'] = 1234567890;
 $_ENV = $_GET = $_POST = [];
 
 
-//if (extension_loaded('xdebug')) {
-//	xdebug_disable();
-//	Tester\CodeCoverage\Collector::start(__DIR__ . '/coverage.dat');
-//}
-
-function id($val) {
+function id($val)
+{
 	return $val;
 }
 
-function run(Tester\TestCase $testCase) {
+
+function run(Tester\TestCase $testCase)
+{
 	$testCase->run();
 }

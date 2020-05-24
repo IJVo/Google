@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * This file is part of the Kdyby (http://www.kdyby.org)
@@ -167,7 +168,7 @@ class GoogleExtension extends CompilerExtension
 	public static function register(Nette\Configurator $configurator)
 	{
 		$configurator->onCompile[] = function ($config, Nette\DI\Compiler $compiler) {
-			$compiler->addExtension('google', new GoogleExtension());
+			$compiler->addExtension('google', new self());
 		};
 	}
 }
