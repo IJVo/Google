@@ -168,7 +168,7 @@ class GoogleExtension extends CompilerExtension
 	public static function register(Nette\Configurator $configurator)
 	{
 		$configurator->onCompile[] = function ($config, Nette\DI\Compiler $compiler) {
-			$compiler->addExtension('google', new self());
+			$compiler->addExtension('google', new self);
 		};
 	}
 }

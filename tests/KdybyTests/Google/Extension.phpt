@@ -31,7 +31,7 @@ class ExtensionTest extends Tester\TestCase
 	 */
 	protected function createContainer()
 	{
-		$config = new Nette\Configurator();
+		$config = new Nette\Configurator;
 		$config->setTempDirectory(TEMP_DIR);
 		Kdyby\Google\DI\GoogleExtension::register($config);
 		$config->addConfig(__DIR__ . '/files/config.neon');
@@ -48,4 +48,4 @@ class ExtensionTest extends Tester\TestCase
 	}
 }
 
-KdybyTests\run(new ExtensionTest());
+KdybyTests\run(new ExtensionTest);

@@ -94,10 +94,10 @@ class Configuration
 		if (!$this->returnDestination) {
 			throw new InvalidStateException(
 							'Google oauth can redirect back only to one exactly specified url (or several, but they still have to be specified), ' .
-							'so you have to set the action of this url with ' . get_called_class() . '::setReturnDestination() or preferably in config under key `google: returnUri:`. ' .
+							'so you have to set the action of this url with ' . static::class . '::setReturnDestination() or preferably in config under key `google: returnUri:`. ' .
 							'The format is either an uri `https://www.kdyby.org/oauth-google`, presenter name `:Front:Homepage:` in which case the signal to this component will be added lazily, ' .
 							"or you can specify parameters `':Front:Homepage:'(page=2)`. Be aware that the presenter name should be always absolute and it's the preferred way to specify the return uri. " .
-							'After successful authorization, the user will be redirected back where he started, using the restore request.'
+							'After successful authorization, the user will be redirected back where he started, using the restore request.',
 			);
 		}
 

@@ -86,7 +86,7 @@ class SessionStorage
 	 */
 	public function get($key, $default = false)
 	{
-		return isset($this->session->$key) ? $this->session->$key : $default;
+		return $this->session->$key ?? $default;
 	}
 
 

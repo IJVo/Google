@@ -191,7 +191,7 @@ class Google
 
 	/**
 	 * @param string $key
-	 * @return string|bool|NULL
+	 * @return string|bool|null
 	 */
 	public function getIdToken($key = null)
 	{
@@ -281,7 +281,7 @@ class Google
 		// if the token is present, verify that the token is not expired
 		if (!empty($this->session->access_token)) {
 			$token = $this->session->access_token;
-			if (isset($token['created']) && isset($token['expires_in']) && (($token['created'] + ($token['expires_in'] - 30)) < time())) {
+			if (isset($token['created'], $token['expires_in'])   && (($token['created'] + ($token['expires_in'] - 30)) < time())) {
 				$this->session->clearAll();
 				return false;
 			}
@@ -395,7 +395,7 @@ class Google
 
 
 	/**
-	 * @return array|NULL
+	 * @return array|null
 	 */
 	protected function getVerifiedIdToken()
 	{
