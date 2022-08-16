@@ -208,7 +208,7 @@ class Google
 
 
 	/**
-	 * @return \Google_Service_Oauth2_Userinfoplus
+	 * @return \Google\Service\Oauth2\Userinfo
 	 * @throws Google_Exception
 	 */
 	public function getProfile()
