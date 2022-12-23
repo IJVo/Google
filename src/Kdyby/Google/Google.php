@@ -261,7 +261,8 @@ class Google
 
 			try {
 				$this->client->refreshToken($this->session->refresh_token);
-				$accessToken = Json::decode($this->client->getAccessToken(), Json::FORCE_ARRAY);
+				// $accessToken = Json::decode($this->client->getAccessToken(), Json::FORCE_ARRAY);
+				$accessToken = $this->client->getAccessToken();
 
 				if (empty($accessToken) || !is_array($accessToken)) {
 					throw new UnexpectedValueException('Access token is expected to be a valid json array.');
