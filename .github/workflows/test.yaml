@@ -3,48 +3,47 @@ name: Tests
 on: [push, pull_request]
 
 jobs:
-    tests:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                php: ['7.3', '7.4', '8.0', '8.1']
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.1','8.2','8.3']
+      fail-fast: false
 
-            fail-fast: false
+    name: PHP ${{ matrix.php }} tests
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
 
-        name: PHP ${{ matrix.php }} tests
-        steps:
-            - uses: actions/checkout@v2
-            - uses: shivammathur/setup-php@v2
-              with:
-                  php-version: ${{ matrix.php }}
-                  coverage: none
-
-            - run: mkdir -p tests/_temp
-            - run: mkdir -p tests/_tmp
-            - run: mkdir temp/
-            - run: composer self-update
-            - run: composer update --no-progress --prefer-dist --prefer-stable
-            - run: vendor/bin/tester ./tests/KdybyTests/ -s -C
-            - if: failure()
-              uses: actions/upload-artifact@v2
-              with:
-                  name: output
-                  path: tests/**/output
+      - run: mkdir -p tests/_temp
+      - run: mkdir -p tests/_tmp
+      - run: mkdir temp/
+      - run: composer self-update
+      - run: composer update --no-progress --prefer-dist --prefer-stable
+      - run: vendor/bin/tester ./tests/KdybyTests/ -s -C
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: output
+          path: tests/**/output
 
 
-    lowest_dependencies:
-        name: Lowest Dependencies
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: shivammathur/setup-php@v2
-              with:
-                  php-version: 7.3
-                  coverage: none
+  lowest_dependencies:
+    name: Lowest Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          coverage: none
 
-            - run: mkdir -p tests/_temp
-            - run: mkdir -p tests/_tmp
-            - run: mkdir temp/
-            - run: composer self-update
-            - run: composer update --no-progress --prefer-dist --prefer-lowest --prefer-stable
-            - run: vendor/bin/tester ./tests/KdybyTests/ -s -C
+      - run: mkdir -p tests/_temp
+      - run: mkdir -p tests/_tmp
+      - run: mkdir temp/
+      - run: composer self-update
+      - run: composer update --no-progress --prefer-dist --prefer-lowest --prefer-stable
+      - run: vendor/bin/tester ./tests/KdybyTests/ -s -C

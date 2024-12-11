@@ -208,7 +208,7 @@ class Google
 
 
 	/**
-	 * @return \Google_Service_Oauth2_Userinfoplus
+	 * @return \Google_Service_Oauth2_Userinfo
 	 * @throws Google_Exception
 	 */
 	public function getProfile()
@@ -463,7 +463,7 @@ class Google
 	 * @param AbstractDialog $dialog
 	 * @return Application\UI\Link|UrlScript
 	 */
-	public function getReturnLink(AbstractDialog $dialog = null)
+	public function getReturnLink(?AbstractDialog $dialog = null)
 	{
 		$destination = $this->config->getReturnDestination();
 
